@@ -153,6 +153,8 @@ class icinga2(
   $plugins        = $icinga2::params::plugins,
   $confd          = true,
   $repositoryd    = true,
+  $user           = $icinga2::params::user,
+  $group          = $icinga2::params::group,
 ) inherits ::icinga2::params {
 
   validate_re($ensure, [ '^running$', '^stopped$' ],
