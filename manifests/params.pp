@@ -13,8 +13,7 @@
 #
 #
 class icinga2::params {
-  $user             = undef
-  $group            = undef
+
   $package          = 'icinga2'
   $service          = 'icinga2'
   $plugins          = [ 'plugins', 'plugins-contrib', 'windows-plugins', 'nscp' ]
@@ -143,8 +142,10 @@ class icinga2::params {
     } # Linux
 
     'windows': {
-      $user                 = 'Administrators'
-      $group                = 'NETWORK SERVICE'
+      $user                 = 'Administrateurs'
+      $group                = 'Service Réseau'
+      # $user                 = 'Administrators'
+      # $group                = 'NETWORK SERVICE'
       $icinga2_bin          = 'icinga2.exe'
       $bin_dir              = 'C:/Program Files/icinga2/sbin'
       $conf_dir             = 'C:/ProgramData/icinga2/etc/icinga2'
